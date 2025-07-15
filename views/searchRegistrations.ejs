@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Registrations</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Search Registrations</h1>
+    <a href="/auth/logout" class="btn logout-btn">Logout</a>
+    <form action="/registrations/search" method="GET" class="search-form">
+      <input type="text" name="query" value="<%= query || '' %>" placeholder="Search by student username">
+      <button type="submit" class="btn">Search</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Event</th>
+          <th>Registration Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% registrations.forEach(reg => { %>
+          <tr>
+            <td><%= reg.studentId.username %></td>
+            <td><%= reg.eventId.name %></td>
+            <td><%= new Date(reg.registrationDate).toLocaleString() %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <a href="/registrations/list" class="btn">Back to List</a>
+  </div>
+</body>
+</html>
