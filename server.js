@@ -10,7 +10,7 @@ const registrationRoutes = require('./routes/registrationRoutes');
 const app = express();
 
 // MongoDB connection
-mongoose.connect('mongodb+srv://truong123:truong123@truongcluster.nq3ga4g.mongodb.net/?retryWrites=true&w=majority&appName=truongcluster', { 
+mongoose.connect('mongodb+srv://truong123:truong123@truongcluster.nq3ga4g.mongodb.net/?retryWrites=true&w=majority&appName=event_db', { 
   useNewUrlParser: true, 
   useUnifiedTopology: true 
 })
